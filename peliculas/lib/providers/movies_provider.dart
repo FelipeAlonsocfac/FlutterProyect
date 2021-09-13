@@ -11,6 +11,9 @@ class MoviesProvider extends ChangeNotifier{
 
   List<Movie> onDisplayMovies = [];
   List<Movie> popularMovies = [];
+  
+  Map<int, List<Cast>> moviesCast = {};
+
   int _popularPage = 0;
 
   MoviesProvider(){
@@ -50,5 +53,9 @@ class MoviesProvider extends ChangeNotifier{
 
     notifyListeners();
 
+  }
+
+  getMovieCast(int movieId) async {
+    print("Pidiendo info");
   }
 }

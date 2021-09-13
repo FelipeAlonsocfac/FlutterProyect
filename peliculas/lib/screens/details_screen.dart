@@ -4,13 +4,11 @@ import 'package:peliculas/widgets/widgets.dart';
 
 class DetailsScreen extends StatelessWidget {
   
-  //TODO: cambiar luego por una instancia de movie
-
-  
   @override
   Widget build(BuildContext context) {
 
     final Movie movie = ModalRoute.of(context)!.settings.arguments as Movie;
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -20,7 +18,7 @@ class DetailsScreen extends StatelessWidget {
               _PosterAndTitle(movie: movie),
               _Overview(movie: movie),
               _Overview(movie: movie),
-              CastingCards(),
+              CastingCards(movie.id),
             ]),
           ),
         ],
